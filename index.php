@@ -23,5 +23,5 @@ if (isset($_REQUEST['fileNameAndExtension'])) {
 
 $allcommand = $run_command.' "'.$url.'" '.$fileNameAndExtension;
 exec($allcommand);
-echo '{$domain}/{$fileNameAndExtension}';
+echo $domain.'/'.$fileNameAndExtension;
 ?>
