@@ -3,7 +3,7 @@
 $openshift = true;
 if ($openshift) {
   $fileNameAndExtension = 'form.pdf';
-  $domain = 'http://exporthtmlto-bixsolutions.rhcloud.com/';
+  $domain = 'http://exporthtmlto-bixsolutions.rhcloud.com';
   $run_command = '~/app-root/data/phantomjs/bin/phantomjs generatePDF.js';
 } else {
   $fileNameAndExtension = 'form.pdf';
