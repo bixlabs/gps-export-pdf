@@ -2,10 +2,12 @@
 
 $openshift = true;
 if ($openshift) {
-  $domain = 'http://investigo-bix.rhcloud.com';
+  $fileNameAndExtension = 'form.pdf';
+  $domain = 'http://exporthtmlto-bixsolutions.rhcloud.com/';
   $run_command = '~/app-root/data/phantomjs/bin/phantomjs generatePDF.js';
 } else {
-  $domain = 'http://localhost/investigo';
+  $fileNameAndExtension = 'form.pdf';
+  $domain = 'http://localhost/investigo/technicalSupportForm';
   $run_command = 'phantomjs generatePDF.js';
 }
 
@@ -14,12 +16,12 @@ if (isset($_REQUEST['url'])) {
   $url = $_REQUEST['url'];
 }
 
-$fileNameAndExtension = 'form.pdf';
+
 if (isset($_REQUEST['fileNameAndExtension'])) {
   $fileNameAndExtension = $_REQUEST['fileNameAndExtension'];
 }
 
 $allcommand = $run_command.' "'.$url.'" '.$fileNameAndExtension;
 exec($allcommand);
-echo "{formUrl:'{$domain}/technicalSupportForm/{$fileNameAndExtension}'}";
+echo "{formUrl:'{$domain}/{$fileNameAndExtension}'}";
 ?>
