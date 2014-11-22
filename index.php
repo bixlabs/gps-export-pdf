@@ -16,12 +16,16 @@ if (isset($_REQUEST['url'])) {
   $url = $_REQUEST['url'];
 }
 
+$params = '';
+if ($_REQUEST['params']) {
+  $params = urldecode($_REQUEST['params']);
+}
 
 if (isset($_REQUEST['fileNameAndExtension'])) {
   $fileNameAndExtension = $_REQUEST['fileNameAndExtension'];
 }
 
-$allcommand = $run_command.' "'.$url.'" '.$fileNameAndExtension;
+$allcommand = $run_command.' "'.$url.'" '.$fileNameAndExtension . ' ' . $params;
 exec($allcommand);
 echo $domain.'/'.$fileNameAndExtension;
 ?>
