@@ -1,0 +1,57 @@
+<?php
+
+/*
+Please make note of these MySQL credentials again:
+  Root User: adminqEJK4jV
+  Root Password: wN4cCHPFzxDC
+URL: https://exporthtmlto-bixsolutions.rhcloud.com/phpmyadmin/
+
+       Root User: adminqEJK4jV
+   Root Password: wN4cCHPFzxDC
+   Database Name: exporthtmlto
+
+Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
+*/
+
+$mysqli = new mysqli('mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/', "adminqEJK4jV", "wN4cCHPFzxDC", "hashmap");
+if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    http_response_code(503);
+}
+
+$method = $_SERVER['REQUEST_METHOD'];
+if ($method == 'POST') {
+
+	$key   = $_REQUEST['key'];
+	$value = $_REQUEST['value'];
+
+	if (($stmt = $mysqli->prepare("INSERT INTO hashmap(key, value) VALUES (?,?)")) &&
+		 $stmt->bind_param("ss", $key, $value) &&
+		 $stmt->execute()) {
+
+	     http_response_code(200);
+	} else {
+		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+		http_response_code(503);
+	}
+
+	$stmt->close();
+} else if ($method == 'GET') {
+	$key   = $_REQUEST['key'];
+
+	if (($stmt = $mysqli->prepare("SELECT value FROM hashmap WHERE key = ?")) &&
+		 $stmt->bind_param("s", $key) &&
+		 $stmt->execute()) {
+
+	     $result = $stmt->get_result()
+	 	 print_r($result);
+	     http_response_code(200);
+	} else {
+		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+		http_response_code(503);
+	}
+} else {
+
+	http_response_code(503);
+}
+?>
