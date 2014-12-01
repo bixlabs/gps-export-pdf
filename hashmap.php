@@ -36,10 +36,6 @@ echo " aqui";
 		 $stmt->bind_param("ss", $key, $value) &&
 		 $stmt->execute()) {
 echo "success!";
-	     header("Status: 200 all good");
-	} else {
-		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
-		header("Status: 500 Not Found");
 	}
 
 	$stmt->close();
@@ -52,14 +48,7 @@ echo "success!";
 
 	     $result = $stmt->get_result()
 	 	 print_r($result);
-	     header("Status: 200 all good");
-	} else {
-		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
-		header("Status: 404 Not Found");
 	}
-} else {
-
-	header("Status: 404 Not Found");
 }
 
 ?>
