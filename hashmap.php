@@ -18,17 +18,17 @@ if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     http_response_code(503);
 }
-
+echo "aqu------i";
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method == 'POST') {
 
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
-
+echo " aqui";
 	if (($stmt = $mysqli->prepare("INSERT INTO hashmap(key, value) VALUES (?,?)")) &&
 		 $stmt->bind_param("ss", $key, $value) &&
 		 $stmt->execute()) {
-
+echo "success!";
 	     http_response_code(200);
 	} else {
 		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
