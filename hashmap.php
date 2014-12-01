@@ -20,7 +20,7 @@ $db_port = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
 
 echo "aca si lelga".$db_host.$db_pass.$db_name;
 
-$mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
+$mysqli = new mysqli($db_host, $db_user, $db_pass, 'hashmap', $db_port);
 
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
