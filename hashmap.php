@@ -18,7 +18,7 @@ $db_pass = $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'];
 $db_name = $_ENV['OPENSHIFT_APP_NAME'];
 $db_port = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
 
-echo "aca si lelga";
+echo "aca si lelga".db_host.db_pass.db_name;
 
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 
