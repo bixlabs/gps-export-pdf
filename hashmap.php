@@ -32,16 +32,6 @@ if ($_POST) {
 	$value = $_REQUEST['value'];
 
 	
-} else if ($_GET) {
-	$key   = $_REQUEST['key'];
-
-	if (($stmt = $mysqli->prepare("SELECT value FROM hashmap WHERE key = ?")) &&
-		 $stmt->bind_param("s", $key) &&
-		 $stmt->execute()) {
-
-	     $result = $stmt->get_result()
-	 	 print_r($result);
-	}
-}
+} 
 
 ?>
