@@ -30,14 +30,8 @@ if ($_POST) {
 
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
-echo " aqui";
-	if (($stmt = $mysqli->prepare("INSERT INTO hashmap(key, value) VALUES (?,?)")) &&
-		 $stmt->bind_param("ss", $key, $value) &&
-		 $stmt->execute()) {
-echo "success!";
-	}
 
-	$stmt->close();
+	
 } else if ($_GET) {
 	$key   = $_REQUEST['key'];
 
