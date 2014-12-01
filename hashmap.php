@@ -24,9 +24,8 @@ $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-
 }
-echo "aqu------i";/*
+echo "aqu------i";
 $method = $_SERVER['REQUEST_METHOD'];
 if ($method == 'POST') {
 
@@ -37,10 +36,10 @@ echo " aqui";
 		 $stmt->bind_param("ss", $key, $value) &&
 		 $stmt->execute()) {
 echo "success!";
-	     http_response_code(200);
+	     header("Status: 200 all good");
 	} else {
 		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
-		http_response_code(503);
+		header("Status: 500 Not Found");
 	}
 
 	$stmt->close();
@@ -53,14 +52,14 @@ echo "success!";
 
 	     $result = $stmt->get_result()
 	 	 print_r($result);
-	     http_response_code(200);
+	     header("Status: 200 all good");
 	} else {
 		echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
-		http_response_code(503);
+		header("Status: 404 Not Found");
 	}
 } else {
 
-	http_response_code(503);
+	header("Status: 404 Not Found");
 }
-*/
+
 ?>
