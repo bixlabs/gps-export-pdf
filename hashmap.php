@@ -32,6 +32,7 @@ if ($_POST) {
 	$value = $_REQUEST['value'];
 
 	$stmt = $mysqli->prepare("INSERT INTO hashmap(key, value) VALUES (?,?)");
+	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	$stmt->bind_param("ss", $key, $value);
 	$stmt->execute();
 	echo "success!";
