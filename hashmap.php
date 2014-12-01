@@ -24,7 +24,7 @@ $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-    http_response_code(503);
+
 }
 echo "aqu------i";/*
 $method = $_SERVER['REQUEST_METHOD'];
