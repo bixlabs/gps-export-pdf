@@ -26,8 +26,7 @@ if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 echo "aqu------i";
-$method = $_SERVER['REQUEST_METHOD'];
-if ($method == 'POST') {
+if ($_POST) {
 
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
@@ -39,7 +38,7 @@ echo "success!";
 	}
 
 	$stmt->close();
-} else if ($method == 'GET') {
+} else if ($_GET) {
 	$key   = $_REQUEST['key'];
 
 	if (($stmt = $mysqli->prepare("SELECT value FROM hashmap WHERE key = ?")) &&
