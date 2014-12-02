@@ -9,7 +9,6 @@ $db_port = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
 @mysql_connect($db_host, 'adminqEJK4jV', 'wN4cCHPFzxDC');
 mysql_select_db('hashmap') or die('Cant select database'.mysql_error());
 
-echo "aqu------i";
 if ($_POST) {
 
 	$key   = $_REQUEST['key'];
@@ -17,9 +16,8 @@ if ($_POST) {
 
 	$result = mysql_query("INSERT INTO hashmap VALUES ('{$key}','{$value}')");
 } else {
-  $result = mysql_query("SELECT value FROM hashmap where `key` = '{$key}'");
+  $result = mysql_query("SELECT value FROM hashmap where thekey = '{$key}'");
   $row = $result->fetch_assoc();
-  echo "id: ".$row["value"];
+  echo $row["value"];
 }
-
 ?>
