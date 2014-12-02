@@ -31,7 +31,9 @@ if ($_POST) {
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
 
-	$result = $mysqli->query('INSERT INTO hashmap VALUES ({$key},{$value})');
+  echo 'INSERT INTO hashmap VALUES ({$key},{$value})';
+
+	//$result = $mysqli->query();
 }
 
 ?>
