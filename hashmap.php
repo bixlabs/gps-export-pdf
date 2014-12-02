@@ -14,8 +14,12 @@ if ($_POST) {
 
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
-  echo "la query: "."INSERT INTO hashmap VALUES ('{$key}','{$value}')";
+
 	$result = mysql_query("INSERT INTO hashmap VALUES ('{$key}','{$value}')");
+} else {
+  $result = mysql_query("SELECT value FROM hashmap where `key` = '{$key}'");
+  $row = $result->fetch_assoc();
+  echo "id: ".$row["value"];
 }
 
 ?>
