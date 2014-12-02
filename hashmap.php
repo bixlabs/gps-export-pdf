@@ -31,7 +31,7 @@ if ($_POST) {
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
 
-	$result = $mysqli->query('SELECT 1;');
+	$result = $mysqli->query('INSERT INTO hashmap VALUES ({$key},{$value})');
   $result->data_seek(0);
   while ($row = $result->fetch_assoc()) {
     echo "the value = " . $row['value'] . "\n";
