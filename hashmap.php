@@ -31,12 +31,11 @@ if ($_POST) {
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
 
-	$stmt = $mysqli->prepare("INSERT INTO hashmap(key, value) VALUES (?,?)");
-	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	$stmt->bind_param("ss", $key, $value);
-	$stmt->execute();
-	echo "success!";
-	$stmt->close();
+	$result = $mysqli->query('INSERT INTO hashmap (key, value) VALUES ({$key},{$value})');
+  $result->data_seek(0);
+  while ($row = $result->fetch_assoc()) {
+    echo "the value = " . $row['value'] . "\n";
+  }
 }
 
 ?>
