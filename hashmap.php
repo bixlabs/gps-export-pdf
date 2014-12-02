@@ -18,8 +18,6 @@ $db_pass = $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'];
 $db_name = $_ENV['OPENSHIFT_APP_NAME'];
 $db_port = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
 
-echo "aca si lelga".$db_host.$db_pass.$db_name;
-
 $mysqli = new mysqli($db_host, $db_user, $db_pass, 'hashmap', $db_port);
 
 if ($mysqli->connect_errno) {
@@ -31,7 +29,7 @@ if ($_POST) {
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
 
-  echo 'INSERT INTO hashmap VALUES ({$key},{$value})';
+  echo "INSERT INTO hashmap VALUES ({$key},{$value})";
 
 	//$result = $mysqli->query();
 }
