@@ -18,18 +18,17 @@ $db_pass = $_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'];
 $db_name = $_ENV['OPENSHIFT_APP_NAME'];
 $db_port = $_ENV['OPENSHIFT_MYSQL_DB_PORT'];
 
-$mysqli = new mysqli($db_host, 'adminqEJK4jV', 'wN4cCHPFzxDC', 'hashmap', $db_port);
+@mysql_connect($db_host, 'adminqEJK4jV', 'wN4cCHPFzxDC');
+mysql_select_db('hashmap') or die('Cant select database'.mysql_error());
 
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+
 echo "aqu------i";
 if ($_POST) {
 
 	$key   = $_REQUEST['key'];
 	$value = $_REQUEST['value'];
-
-	$result = $mysqli->query("INSERT INTO hashmap VALUES ({$key},{$value})");
+  echo "la query: "."INSERT INTO hashmap VALUES ({$key},{$value})";
+	$result = mysql_query("INSERT INTO hashmap VALUES ({$key},{$value})");
 }
 
 ?>
