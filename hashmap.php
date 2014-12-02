@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Origin: http://localhost');
 header("Access-Control-Allow-Credentials: true"); 
 header('Access-Control-Allow-Headers: X-Requested-With');
 header('Access-Control-Allow-Headers: application-id, accept, secret-key, user-token, content-type');
