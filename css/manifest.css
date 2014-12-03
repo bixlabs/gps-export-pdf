@@ -2,13 +2,12 @@
 
 .content-body, .main-layout-content, .section {
 	position: fixed;
-	height: 2000px !important;
+	height: 2300px !important;
 	width: 1200px !important;
 	top: 0;
 	left: 0px;
 	display: block !important;
-	overflow: scroll !important;
 }
-#sidebar, #header{
+#sidebar, #header, .trends-report-buttons-container {
 	display: none;
 }
