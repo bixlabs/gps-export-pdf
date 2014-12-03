@@ -11,6 +11,6 @@
 .trends-report-container {
 	height: 3400px !important;
 }
-#sidebar, #header, .trends-report-buttons-container {
+#sidebar, #header, .trends-report-buttons-container, .spinner-container {
 	display: none;
 }
