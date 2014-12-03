@@ -2,11 +2,11 @@
 
 .content-body, .main-layout-content, .section {
 	position: fixed;
-	height: 1000px;
-	width: 1000px;
+	height: 1000px !important;
+	width: 1000px !important;
 	top: 0;
 	left: 0px;
-	display: block;
+	display: block !important;
 }
 #sidebar, #header{
 	display: none;
