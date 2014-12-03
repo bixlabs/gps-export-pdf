@@ -30,8 +30,8 @@ mysql_select_db('hashmap') or die('Cant select database'.mysql_error());
 if ($_POST) {
 
 	$key   = $_REQUEST['key'];
-	$value = addslashes($_REQUEST['value']);
-
+	$value = mysqli::escape_string($_REQUEST['value']);
+echo $value;
 	$result = mysql_query("INSERT INTO hashmap VALUES ('{$key}','{$value}')");
 } else {
 
