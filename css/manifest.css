@@ -8,6 +8,9 @@
 	left: 0px;
 	display: block !important;
 }
+.trends-report-container {
+	height: 2600px !important;
+}
 #sidebar, #header, .trends-report-buttons-container {
 	display: none;
 }
