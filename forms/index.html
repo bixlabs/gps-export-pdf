@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html class='normal'>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport' />
+    <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='black' name='apple-mobile-web-app-status-bar-style' />
+    <title>GPS</title>
+    <link href='../css/manifest.css' rel='stylesheet' />
+  </head>
+  <body>
+    <!-- Loading indicator -->
+    <div class='loading'>
+      <div class='locker'></div>
+      <div class='spinner-container'></div>
+    </div>
+    <!-- Views get rendered in this container -->
+    <div class='section dashboard'>
+      <!-- This is the application header -->
+      <div id='header'>
+        <div class='navigation'>
+          <ul class='breadcrumbs'>
+            <!-- %li -->
+            <!-- Dashboards home -->
+            <!-- %span.divider -->
+            <!-- %li.active -->
+            <!-- Executive dashboard -->
+          </ul>
+        </div>
+        <div class='clients-selection'>
+          <div class='control-group'>
+            <div class='controls'>
+              <select class='client-list size300' name='clients'></select>
+            </div>
+          </div>
+        </div>
+        <!-- .combo-main -->
+        <div class='search'>
+          <input autocapitalize='off' autocomplete='off' autocorrect='off' placeholder='Search' type='text'>
+        </div>
+      </div>
+      <!-- This is the application sidebar -->
+      <div id='sidebar-old'>
+        <div class='user'>
+          <div class='image-placeholder'></div>
+          <img src='img/default_user_img.png'>
+        </div>
+        <div class='welcome'>
+          Welcome
+          <span class='user-name'></span>
+        </div>
+        <ul class='sections'>
+          <li class='dashboard'>
+            <a href='#'>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class='backlogs'>
+            <a href='#backlogs'>
+              <span>Improvement Plans</span>
+            </a>
+          </li>
+          <li class='clients'>
+            <a href='#clients'>
+              <span>Clients</span>
+            </a>
+          </li>
+          <li class='settings'>
+            <a href='#settings'>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+        <div class='environment hide'>
+          <span class='environment-text'>Development</span>
+        </div>
+      </div>
+      <div class='content-body'>
+        <div class='nav-head'></div>
+        <div class='contents overthrow'>
+          <div class='scroll'>
+            <div id='content'>
+              <fieldset>
+                <div class='control-group'>
+                  <label class='control-label' for='input01'>Story Name:</label>
+                  <div class='controls'>
+                    <input class='input-xlarge size70' id='input01' type='text' value='The first story' />
+                    <select class='last'>
+                      <option>United States</option>
+                      <option>Canada</option>
+                    </select>
+                  </div>
+                </div>
+                <div class='control-group'>
+                  <label class='control-label' for='input01'>Description:</label>
+                  <div class='controls'>
+                    <textarea class='size100'>This is just a short test description of the story</textarea>
+                  </div>
+                </div>
+                <div class='control-group'>
+                  <label class='control-label' for='input01'>Value / Benefit statement:</label>
+                  <div class='controls'>
+                    <textarea class='size100'></textarea>
+                  </div>
+                </div>
+                <div class='control-group'>
+                  <label class='control-label' for='input01'>Acceptance Criteria:</label>
+                  <div class='controls'>
+                    <textarea class='size100'></textarea>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class='gray'>
+                <div class='resource'>
+                  <div class='left'>
+                    <div class='name'>Work with team members on attending daily standup meetings</div>
+                  </div>
+                  <div class='right'>
+                    <div class='info'>Blocked</div>
+                    <div class='button-expand'></div>
+                  </div>
+                  <div class='clearfix'></div>
+                </div>
+              </fieldset>
+              <fieldset class='blue'>
+                <div class='add-resource'>
+                  <div class='control-group'>
+                    <label class='control-label' for='input01'>Task name:</label>
+                    <div class='controls'>
+                      <input class='size70' type='text' value='Help product owner with user stories' />
+                      <div class='select-wrapper'>
+                        <select class='last'>
+                          <option>Done</option>
+                          <option>Long text</option>
+                        </select>
+                      </div>
+                      <div class='button-expand up'></div>
+                    </div>
+                  </div>
+                  <div class='control-group'>
+                    <label class='control-label' for='input01'>Details:</label>
+                    <div class='controls'>
+                      <input class='size-full100' type='text' />
+                    </div>
+                  </div>
+                  <div class='control-group'>
+                    <label class='control-label' for='input01'></label>
+                    <div class='controls'>
+                      <select>
+                        <option>Owner</option>
+                        <option>Long text</option>
+                      </select>
+                      <div class='inline-input s2of3'>
+                        <label class='no-float control-label' for='input01'>Estimated hours:</label>
+                        <input type='text' />
+                      </div>
+                      <div class='inline-input s3of3'>
+                        <label class='no-float control-label' for='input01'>To do:</label>
+                        <input type='text' />
+                      </div>
+                      <div class='clearfix'></div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>First name:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='Chris' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Last name:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='Chris' />
+                    </div>
+                  </div>
+                </div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Work phone:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='212-555-1212' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Cell phone:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='917-555-1234' />
+                    </div>
+                  </div>
+                </div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Email:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='chris.herring@gmail.com' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Access level:</label>
+                    <div class='controls'>
+                      <select>
+                        <option>Owner</option>
+                        <option>Long text</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Username:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='chris55' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Password:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='password' value='thepassword' />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class='control-group thin'>
+                  <label class='control-label' for='input01'>Team name:</label>
+                  <div class='controls'>
+                    <input class='input-xlarge size100' id='input01' type='text' value='' />
+                  </div>
+                </div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Team email:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Team phone:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='' />
+                    </div>
+                  </div>
+                  <div class='clearfix'></div>
+                </div>
+                <div class='separator'></div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Contact name:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Contact role:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='' />
+                    </div>
+                  </div>
+                  <div class='clearfix'></div>
+                </div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Contact email:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size50-inline'>
+                    <label class='control-label' for='input01'>Contact home:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge size100' id='input01' type='text' value='' />
+                    </div>
+                  </div>
+                  <div class='clearfix'></div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class='control-group thin'>
+                  <label class='control-label' for='input01'>Name:</label>
+                  <div class='controls'>
+                    <input class='input-xlarge size100' id='input01' type='text' value='XYZ Company, Inc.' />
+                  </div>
+                </div>
+                <div class='form-row'>
+                  <div class='position1of2 control-group size70-inline left'>
+                    <label class='control-label' for='input01'>Street:</label>
+                    <div class='controls'>
+                      <input class='input-xlarge' id='input01' type='text' value='439 Madison Ave.' />
+                    </div>
+                  </div>
+                  <div class='position2of2 control-group size30-inline right'>
+                    <label class='control-label' for='input01'>Suite/Floor:</label>
+                    <div class='controls'>
+                      <input class='right input-xlarge' id='input01' type='text' value='14th floor' />
+                    </div>
+                  </div>
+                  <div class='clearfix'></div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
