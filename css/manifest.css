@@ -4,3 +4,6 @@
 	position: fixed;
 	height: 100%;
 }
+#sidebar, #header{
+	display: none;
+}
