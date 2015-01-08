@@ -9,7 +9,10 @@
 	display: block !important;
 }
 .trends-report-container {
-	height: 3400px !important;
+	height: 3400px !important; 
+}
+.trends-report-section {
+  height: 1000px !important;
 }
 #sidebar, #header, .trends-report-buttons-container, .spinner-container {
 	display: none;
